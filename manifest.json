@@ -1,5 +1,11 @@
 {
  "name": "App",
+ "background_color": "aliceblue",
+ "display": "standalone",
+ "name": "PWA Test app",
+ "short_name": "PWA",
+ "start_url": "./?utm_source=web_app_manifest",
+ "theme_color": "aliceblue",
  "icons": [
   {
    "src": "icons\/android-icon-36x36.png",
