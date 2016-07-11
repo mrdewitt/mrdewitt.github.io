@@ -1,0 +1,9 @@
+{
+  "name": "My-PWA",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-vulcanize": "^1.0.0"
+  }
+}
