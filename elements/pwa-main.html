@@ -5,6 +5,7 @@
 <link rel="import" href="../node_modules/@polymer/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../node_modules/@polymer/paper-material/paper-material.html">
 <link rel="import" href="../node_modules/@polymer/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../node_modules/@polymer/iron-icons/iron-icons.html">
 <style>
 /*
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
@@ -17,13 +18,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 :host {
   display: block;
+  font-family: "Roboto", "Georgia", serif;
 }
 
-.nav {
-  border-right: 1px solid #ccc;
-}
-
-.main {
+[main] {
   background-color: #eee;
 }
 
@@ -46,33 +44,24 @@ paper-material {
 </style>
 
   <template>
-
-    <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
-
-      <div class="nav" drawer="">
-        
-      </div>
-
-      <paper-header-panel class="main" main="" mode="waterfall">
-
-        
-        <paper-toolbar>
-          <paper-icon-button icon="menu" paper-drawer-toggle=""></paper-icon-button>
-        </paper-toolbar>
-
-        
-        <div class="content">
-	  <paper-material>
-	    The PWA test page.
-	    <br>
-	    Here is an emoji for you: <span>🐅</span>
-	  </paper-material>
-        </div>
-
-      </paper-header-panel>
-
-    </paper-drawer-panel>
-
+<paper-drawer-panel force-narrow>
+  <paper-header-panel drawer>
+    <div class="content"> Drawer content... </div>
+  </paper-header-panel>
+  <paper-header-panel main>
+    <paper-toolbar>
+      <paper-icon-button icon="menu" paper-drawer-toggle raised></paper-icon-button>
+      <div>Title</div>
+    </paper-toolbar>
+    <div class="content">
+      <paper-material>
+	The PWA test page.
+	<br>
+	Here is an emoji for you: <span>🐅</span>
+      </paper-material>
+    </div>
+  </paper-header-panel>
+</paper-drawer-panel>
   </template>
   <script>
 Polymer({
