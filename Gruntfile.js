@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     vulcanize: {
       default: {
-        options: { },
-        files: { 'index.html': 'main.html' },
+        options: {},
+        files: {'index.html': 'main.html'},
       }
     }
   });
