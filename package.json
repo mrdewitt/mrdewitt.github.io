@@ -8,6 +8,8 @@
     "grunt-vulcanize": "^1.0.0"
   },
   "dependencies": {
+    "@polymer/app-layout-templates": "0.0.3",
+    "@polymer/iron-elements": "0.0.3",
     "@polymer/polymer": "^1.2.5-npm-test.2"
   }
 }
