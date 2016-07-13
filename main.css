@@ -3,6 +3,6 @@
   src: url('fonts/noto/NotoColorEmoji.ttf');
 }
 
-body span {
+body span.emoji {
   font-family: 'Noto Color Emoji', sans-serif;
 }

@@ -1,5 +1,6 @@
 <!-- define the markup that your element will use -->
 <dom-module id="pwa-main">
+<link rel="import" href="money-rate.html">
 <link rel="import" href="../node_modules/@polymer/paper-drawer-panel/paper-drawer-panel.html">
 <link rel="import" href="../node_modules/@polymer/paper-header-panel/paper-header-panel.html">
 <link rel="import" href="../node_modules/@polymer/paper-icon-button/paper-icon-button.html">
@@ -34,8 +35,10 @@ paper-toolbar {
 }
 
 paper-material {
-  min-height: 100px;
-  max-width: 640px;
+  font-size: 20px;
+  box-sizing: border-box;
+  height: 266px;
+  width: 400px;
   margin: 16px auto;
   padding: 16px;
   background-color: #fff;
@@ -44,7 +47,7 @@ paper-material {
 </style>
 
   <template>
-<paper-drawer-panel force-narrow>
+<paper-drawer-panel responsive-width="1024px">
   <paper-header-panel drawer>
     <div class="content"> Drawer content... </div>
   </paper-header-panel>
@@ -54,10 +57,14 @@ paper-material {
       <div>Title</div>
     </paper-toolbar>
     <div class="content">
+      <template is="dom-if" if="{{requestPending}}">
+        <paper-material>
+          Please wait while we fetch your currency conversion rate.
+          <span class='emoji'>🐅</span>
+        </paper-material>
+      </template>
       <paper-material>
-	The PWA test page.
-	<br>
-	Here is an emoji for you: <span>🐅</span>
+        <money-rate have="USD" need="GBP"></money-rate>
       </paper-material>
     </div>
   </paper-header-panel>
@@ -65,7 +72,17 @@ paper-material {
   </template>
   <script>
 Polymer({
-  is: 'pwa-main'
+  is: 'pwa-main',
+  properties: {
+    requestPending: {
+      default: true,
+      type: Boolean,
+    },
+  },
+
+  ready: function() {
+    this.requestPending = true;
+  }
 });
   </script> 
 </dom-module>

@@ -10,6 +10,7 @@
   "dependencies": {
     "@polymer/app-layout-templates": "0.0.3",
     "@polymer/iron-elements": "0.0.3",
-    "@polymer/polymer": "^1.2.5-npm-test.2"
+    "@polymer/polymer": "^1.2.5-npm-test.2",
+    "money": "^0.2.0"
   }
 }
