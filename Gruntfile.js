@@ -7,6 +7,7 @@ module.exports = function(grunt) {
       default: {
         options: { csp: 'index.js' },
         files: {'index.html': 'main.html'},
+        inlineScripts: true,
       }
     }
   });

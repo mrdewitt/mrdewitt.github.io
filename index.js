@@ -11611,7 +11611,7 @@ Polymer({
 
   _getRate: function(need, have) {
     var elem = this;
-    return fetch('http://api.fixer.io/latest').then(function(response) {
+    return fetch('https://api.fixer.io/latest').then(function(response) {
       if (!response.ok) {
         return '???';
       }
