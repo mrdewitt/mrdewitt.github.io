@@ -5,10 +5,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     vulcanize: {
       default: {
-        options: { csp: 'index.js' },
+        options: { csp: 'index.js', inlineScripts: true },
         files: {'index.html': 'main.html'},
-        inlineScripts: true,
-      }
+      },
     }
   });
 
