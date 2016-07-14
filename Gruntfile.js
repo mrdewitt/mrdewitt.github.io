@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     'http-server': {
       dev: {
         runInBackground: true,
-        root: '.',
+        root: './dist',
         port: 8080,
       }
     },
@@ -16,31 +16,31 @@ module.exports = function(grunt) {
         expand: true,
         cwd: "node_modules/@polymer/platinum-sw",
         src: ["bootstrap/*.js", "service-worker.js"],
-        dest: ".",
+        dest: "dist/",
       },
       "sw-toolbox": {
         expand: true,
         cwd: "node_modules/sw-toolbox",
         src: ["*.js", "*.json"],
-        dest: "./sw-toolbox",
+        dest: "dist/sw-toolbox/",
       }
     },
 
     vulcanize: {
       default: {
         options: { csp: 'index.js', inlineScripts: true },
-        files: {'index.html': 'main.html'},
+        files: {'dist/index.html': 'src/main.html'},
       },
     },
 
     watch: {
       scripts: {
-        files: ['**/*.js', '!**/node_modules/*', '!index.js', '!Gruntfile.js'],
+        files: ['src/**/*.js'],
         tasks: 'vulcanize',
       },
 
       html: {
-        files: ['**/*.html', '!**/node_modules/*', '!index.html', '!Gruntfile.js'],
+        files: ['src/**/*.html'],
         tasks: 'vulcanize',
       }
 
