@@ -14,9 +14,9 @@ module.exports = function(grunt) {
     copy: {
       bootstrap: {
         expand: true,
-        cwd: "node_modules/@polymer/platinum-sw/bootstrap",
-        src: ["*.js"],
-        dest: "./bootstrap/",
+        cwd: "node_modules/@polymer/platinum-sw",
+        src: ["bootstrap/*.js", "service-worker.js"],
+        dest: ".",
       },
       "sw-toolbox": {
         expand: true,
