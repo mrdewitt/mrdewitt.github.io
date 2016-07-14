@@ -2977,28 +2977,33 @@ paper-material {
 </style>
 
   <template>
-<paper-drawer-panel responsive-width="1024px">
-  <paper-header-panel drawer="">
-    <div class="content"> Drawer content... </div>
-  </paper-header-panel>
-  <paper-header-panel main="">
-    <paper-toolbar>
-      <paper-icon-button icon="menu" paper-drawer-toggle="" raised=""></paper-icon-button>
-      <div>Title</div>
-    </paper-toolbar>
-    <div class="content">
-      <template is="dom-if" if="{{requestPending}}">
-        <paper-material>
-          Please wait while we fetch your currency conversion rate.
-          <span class="emoji">🐅</span>
-        </paper-material>
-      </template>
-      <paper-material>
-        <money-rate have="USD" need="GBP"></money-rate>
-      </paper-material>
-    </div>
-  </paper-header-panel>
-</paper-drawer-panel>
+    <platinum-sw-register auto-register="">
+      <platinum-sw-cache precache="[\" icons="" favicon-16x16.png\",="" \"icons="" favicon-96x96.png\"]"=""></platinum-sw-cache>
+      <platinum-sw-fetch origin="api.fixer.io" path="/latest" cache="networkOnly"><platinum-sw-fetch>
+    </platinum-sw-fetch></platinum-sw-fetch></platinum-sw-register>
+
+    <paper-drawer-panel responsive-width="1024px">
+      <paper-header-panel drawer="">
+        <div class="content"> Drawer content... </div>
+      </paper-header-panel>
+      <paper-header-panel main="">
+        <paper-toolbar>
+          <paper-icon-button icon="menu" paper-drawer-toggle="" raised=""></paper-icon-button>
+          <div>Title</div>
+        </paper-toolbar>
+        <div class="content">
+          <template is="dom-if" if="{{requestPending}}">
+            <paper-material>
+              Please wait while we fetch your currency conversion rate.
+              <span class="emoji">🐅</span>
+            </paper-material>
+          </template>
+          <paper-material>
+            <money-rate have="USD" need="GBP"></money-rate>
+          </paper-material>
+        </div>
+      </paper-header-panel>
+    </paper-drawer-panel>
   </template>
   </dom-module>
 </div><pwa-main></pwa-main>
