@@ -23,7 +23,13 @@ module.exports = function(grunt) {
         cwd: "node_modules/sw-toolbox",
         src: ["*.js", "*.json"],
         dest: "dist/sw-toolbox/",
-      }
+      },
+      sw: {
+        expand: true,
+        cwd: "src",
+        src: ["sw-import.js"],
+        dest: "dist/",
+      },
     },
 
     vulcanize: {
