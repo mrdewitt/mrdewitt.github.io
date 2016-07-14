@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 
     vulcanize: {
       default: {
-        options: { csp: 'index.js', inlineScripts: true },
+        options: { csp: 'index.js', inlineScripts: true, inlineCss: true },
         files: {'dist/index.html': 'src/main.html'},
       },
     },
