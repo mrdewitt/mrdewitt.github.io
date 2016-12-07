@@ -1,1 +1,4 @@
 node_modules
+*.un~
+.index.html.swp
+*.html~
